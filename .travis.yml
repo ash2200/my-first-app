@@ -6,30 +6,30 @@ services:
 deploy:
   - provider: elasticbeanstalk
     region: ap-south-1
-    app: "my-first-app"
-    env: "Myfirstapp-env"
+    app: "static-app-testing"
+    env: "Staticapptesting-env"
 
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
 
-    bucket_name: "my-first-app-bucket"
+    bucket_name: "ashish-bucket2200"
 
     bucket_path: "docker"
 
     on:
-      branch: main
+      branch: testing
 
   - provider: elasticbeanstalk
     region: ap-south-1
-    app: "test-app"
-    env: "Testapp-env"
+    app: "static-app-staging"
+    env: "Staticappstaging-env"
 
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
 
-    bucket_name: "my-first-app-bucket"
+    bucket_name: "ashish-bucket2200"
   
     bucket_path: "docker"
 
     on:
-      branch: testing 
+      branch: staging
