@@ -1,35 +1,35 @@
-language: generic
+  language: generic
 
-services:
-    - docker
+  services:
+      - docker
 
-deploy:
-    - provider: elasticbeanstalk
-      region: ap-south-1
-      app: "static-app-testing"
-      env: "Staticapptesting-env"
+  deploy:
+      - provider: elasticbeanstalk
+        region: ap-south-1
+        app: "static-app-testing"
+        env: "Staticapptesting-env"
 
-      access_key_id: $AWS_ACCESS_KEY
-      secret_access_key: $AWS_SECRET_KEY
+        access_key_id: $AWS_ACCESS_KEY
+        secret_access_key: $AWS_SECRET_KEY
 
-      bucket_name: "ashish-bucket2200"
+        bucket_name: "ashish-bucket2200"
 
-      bucket_path: "docker"
+        bucket_path: "docker"
 
-      on:
-        branch: testing
+        on:
+          branch: testing
 
-    - provider: elasticbeanstalk
-      region: ap-south-1
-      app: "static-app-staging"
-      env: "Staticappstaging-env"
+      - provider: elasticbeanstalk
+        region: ap-south-1
+        app: "static-app-staging"
+        env: "Staticappstaging-env"
 
-      access_key_id: $AWS_ACCESS_KEY
-      secret_access_key: $AWS_SECRET_KEY
+        access_key_id: $AWS_ACCESS_KEY
+        secret_access_key: $AWS_SECRET_KEY
 
-      bucket_name: "ashish-bucket2200"
+        bucket_name: "ashish-bucket2200"
   
-      bucket_path: "docker"
+        bucket_path: "docker"
 
-      on:
-        branch: staging
+        on:
+          branch: staging
